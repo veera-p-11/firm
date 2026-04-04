@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HRNVC Firm</title>
+    <title>HNRVC Firm</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,11 +16,10 @@
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">HRNVC Firm</div>
-    <div>
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+    <div >
+        <a href="#services" class="menu">services</a>
+        <a href="#team" class="menu">team</a>
+        <a href="#contact" class="menu">contact</a>
     </div>
 </nav>
 
@@ -40,103 +39,30 @@
     </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-    <h2>Our Services</h2>
-    <div class="cards">
+<section class="services-container">
+    <div class="service-box">
+        <h3>Services</h3>
+        <a href="#" class="learn-more">Read More </a>
+    </div>
 
-        <a href="audit.html" class="card">
-            <h3>Audit & Assurance</h3>
-            <p>Professional audits ensuring compliance and transparency.</p>
-        </a>
+    <div class="service-box">
+        <h3>Team</h3>
+        <a href="#" class="learn-more">Read More </a>
+    </div>
 
-        <a href="tax.html" class="card">
-            <h3>Income Tax</h3>
-            <p>Efficient tax planning and filing services.</p>
-        </a>
-
-        <a href="gst.html" class="card">
-            <h3>GST</h3>
-            <p>Complete GST registration and compliance support.</p>
-        </a>
-
-        <a href="law.html" class="card">
-            <h3>Commercial Law</h3>
-            <p>Expert legal advisory for businesses.</p>
-        </a>
-
+    <div class="service-box">
+        <h3>Contact</h3>
+        <a href="#" class="learn-more">Read More </a>
     </div>
 </section>
 
-<!-- WHY US -->
-<section class="why">
-    <h2>Why Choose Us</h2>
-    <div class="cards">
-
-        <div class="card">
-            <h3>10+ Years Experience</h3>
-        </div>
-
-        <div class="card">
-            <h3>500+ Clients</h3>
-        </div>
-
-        <div class="card">
-            <h3>Expert Team</h3>
-        </div>
-
-        <div class="card">
-            <h3>Reliable Service</h3>
-        </div>
-
-    </div>
-</section>
-
-<!-- TEAM -->
-<section id="team">
-    <h2>Meet Our Team</h2>
-
-    <div class="team">
-
-        <div class="member">
-            <h3>Veera</h3>
-            <p>Audit Specialist</p>
-        </div>
-
-        <div class="member">
-            <h3>⁠Nithish</h3>
-            <p>Income Tax Expert</p>
-        </div>
-
-        <div class="member">
-            <h3>Charan</h3>
-            <p>GST Consultant</p>
-        </div>
-
-        <div class="member">
-            <h3>Hemanth</h3>
-            <p>Commercial Law Advisor</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: sahfirm@gmail.com</p>
-    <p>Phone: +91 9000000000</p>
-</section>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 SAH Firm</p>
+    <p>© 2026 HRNVC Firm</p>
 </footer>
 
 </div>
-
-<!-- WHATSAPP BUTTON -->
-<a href="https://wa.me/919000000000" class="whatsapp" target="_blank">💬</a>
 
 <!-- SCRIPT -->
 <script>
@@ -147,6 +73,11 @@ window.addEventListener("load", function () {
     content.classList.add("fade-in");
 });
 </script>
-
+<script>
+window.addEventListener("scroll", function () {
+    const nav = document.querySelector(".navbar");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 </body>
 </html>
