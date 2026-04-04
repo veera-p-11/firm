@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #f5f7f6;
+    background: #ffffff;
 }
 
 /* LOADER */
@@ -19,7 +19,7 @@ body {
     width: 40px;
     height: 40px;
     border: 4px solid #eee;
-    border-top: 4px solid #2e7d32;
+    border-top: 4px solid #344f78;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -28,15 +28,13 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-.hidden { opacity: 0; }
-
-.fade-in {
-    animation: fadeIn 1s ease forwards;
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+.fade-in {
+    opacity: 1;
 }
 
 /* NAVBAR */
@@ -48,10 +46,11 @@ body {
     border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    color: #2e7d32;
+    color: #2e3f7d;
     font-weight: bold;
 }
 
@@ -59,6 +58,48 @@ body {
     margin-left: 20px;
     text-decoration: none;
     color: #555;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover color */
+.navbar a:hover {
+    color: #2563eb;
+}
+
+/* Underline animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: translateY(-2px);
+}
+
+.navbar a {
+    cursor: pointer;
 }
 
 /* HERO */
@@ -70,24 +111,30 @@ body {
     padding: 120px 10% 80px;
     background: radial-gradient(circle at top right, #b5b7c0, #555559);
     overflow: hidden;
+    /* This creates a transition from your grey/blue mix to pure white */
+    background: linear-gradient(
+        to bottom, 
+        #8e96a1 0%,    /* Your top grey color */
+        #ffffff 100%   /* Fades completely to white at the bottom */
+    );
+    
+    /* Ensure there's no border or shadow causing a line */
+    border: none;
+    padding-bottom: 100px; /* Extra space at the bottom helps the fade look smoother */
 }
 
-.hero-content { max-width: 600px; }
+
+/* Ensure the next section has no margin-top that might break the flow */
 
 
-img{
-    width: 600px;
-    height: 400px;
-    align-self: center;
+.hero-content { max-width: 600px;padding: 10px; }
+
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     border-radius: 20px;
-}
-
-.top-tag {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    color: #a9adaa;
-    font-weight: 700;
 }
 
 .hero-content h1 {
@@ -95,6 +142,7 @@ img{
     line-height: 1.1;
     margin: 20px 0;
     color: #111827;
+    
 }
 .highlight {
     background: linear-gradient(to right, #a9adaa, #3f423f);
@@ -112,10 +160,11 @@ img{
 .floating-card {
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(38, 30, 81, 0.1);
-    border: 1px solid #f1f1f1;
+    border: 1px solid #dedce5;
     animation: float 4s ease-in-out infinite;
     width: 600px;
-    height: 400px;
+    height: auto;
+    background-color: #1b2134;
 }
 
 @keyframes float {
@@ -124,66 +173,6 @@ img{
     100% { transform: translateY(0px); }
 }
 
-/* BUTTON */
-.btn {
-    background: #2e7d32;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-/* SECTIONS */
-section {
-    padding: 50px 20px;
-}
-
-h2 {
-    text-align: center;
-    color: #2e7d32;
-}
-
-/* CARDS */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.card {
-    width: 220px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #333;
-    border: 1px solid #ddd;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #2e7d32;
-}
-
-/* TEAM */
-.team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.member {
-    background: white;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
 
 /* FOOTER */
 footer {
@@ -192,15 +181,64 @@ footer {
     background: white;
 }
 
-/* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 20px;
+.services-container {
+    display: flex;
+    justify-content: center; /* Centers the boxes */
+    gap: 30px;              /* Space between boxes */
+    padding: 80px 10%;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff); /* Smooth fade to white */
+    margin-top: -50px;       /* Pulls it up slightly to overlap the fade */
+}
+
+.service-box {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    flex: 1;                /* Makes all boxes equal width */
+    max-width: 350px;
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Very soft shadow */
+}
+
+/* Hover Effect for that "Premium" feel */
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: #2563eb; /* Accents the box with your logo blue */
+}
+
+.service-box .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+
+.learn-more {
     text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    letter-spacing: 1px;
+}
+
+/* Responsive: Stack boxes on top of each other on mobile */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
