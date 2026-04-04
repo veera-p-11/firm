@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | HRNVC Associates</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+    <div class="logo">HRNVC <span>Associates</span></div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+    </div>
+</nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <h1>Let's Start a <span>Conversation</span></h1>
+            <p>Expert financial guidance is just a message away.</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <div class="info-group">
+                    <h3>Office Address</h3>
+                    <p>123 Financial District, Suite 500<br>Mumbai, MH 400001</p>
+                </div>
+                <div class="info-group">
+                    <h3>Contact Details</h3>
+                    <p>Email: hello@hrnvc.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+                <div class="info-group">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: By Appointment Only</p>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <form id="contactForm">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <select>
+                            <option>Taxation Inquiry</option>
+                            <option>Audit Services</option>
+                            <option>Corporate Advisory</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Your Message</label>
+                        <textarea rows="5" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script>
+window.addEventListener("scroll", function () {
+    document.querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+</body>
+</html>
