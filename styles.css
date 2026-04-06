@@ -242,3 +242,36 @@ footer {
         align-items: center;
     }
 }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .floating-card {
+        width: 100%; /* Scale to screen width */
+        max-width: 500px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-content h1{
+        font-size: 50px;
+    }
+    .service-box{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .logo { font-size: 1.2rem; }
+}
